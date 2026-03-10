@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Cumpleaños</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+/* SOBRE */
+
+#envelope{
+background:#ff6b81;
+color:white;
+padding:20px 40px;
+border-radius:10px;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* CARTA */
+
+#letter{
+display:none;
+position:absolute;
+background:white;
+padding:40px;
+width:60%;
+max-width:600px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+h1{
+color:#ff4d6d;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="envelope" onclick="openLetter()">
+💌 Haz clic para abrir tu carta
+</div>
+
+<div id="letter">
+
+<h1>🎉 Feliz Cumpleaños 🎉</h1>
+
+<p>
+Hoy quiero desearte un muy feliz cumpleaños por tus <b>20 años</b>.
+Espero que este nuevo año de vida esté lleno de alegrías,
+sueños cumplidos y muchos momentos hermosos.
+</p>
+
+<p>
+Eres una gran amiga, y aunque ahora haya distancia y menos contacto,
+siempre tendrás un lugar especial en mi mente y en mi corazón.
+Me quedo con recuerdos hermosos y momentos muy graciosos
+que voy a atesorar por mucho tiempo.
+</p>
+
+<p>
+Estoy muy orgulloso de todo lo que has logrado
+y espero que tengas un cumpleaños maravilloso
+junto a tu pareja y tus dos gatas.
+</p>
+
+<p>
+"La amistad verdadera no se mide por la distancia ni por el tiempo,
+sino por el cariño que siempre permanece."
+</p>
+
+<p>
+<b>Tu amigo del Pangui<br>
+"Capibara"</b>
+</p>
+
+<p><i>P.D.: Ya estás viejita 😆</i></p>
+
+</div>
+
+<script>
+
+function openLetter(){
+document.getElementById("envelope").style.display="none";
+document.getElementById("letter").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
