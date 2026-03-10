@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Cumpleaños</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* SOBRE */
+
+#envelope{
+background:#ff4d6d;
+color:white;
+padding:20px 40px;
+border-radius:12px;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* CARTA */
+
+#letter{
+display:none;
+position:absolute;
+background:white;
+padding:40px;
+max-width:650px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+text-align:center;
+z-index:5;
+}
+
+.cake{
+font-size:70px;
+animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
+/* GLOBOS */
+
+.balloon{
+position:absolute;
+bottom:-120px;
+width:60px;
+height:80px;
+border-radius:50%;
+animation:float linear infinite;
+}
+
+.balloon::after{
+content:"";
+position:absolute;
+width:2px;
+height:60px;
+background:#555;
+top:80px;
+left:50%;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="envelope" onclick="openLetter()">
+💌 Haz clic para abrir tu carta
+</div>
+
+<div id="letter">
+
+<h1>🎉 Feliz Cumpleaños 🎉</h1>
+
+<div class="cake">🎂</div>
+
+<p>
+Hoy quiero desearte un muy feliz cumpleaños por tus <b>20 años</b>.
+Espero que este nuevo año de vida esté lleno de alegrías,
+sueños cumplidos y momentos hermosos.
+</p>
+
+<p>
+Eres una gran amiga, y aunque haya distancia y menos contacto,
+siempre tendrás un lugar especial en mi mente y en mi corazón.
+</p>
+
+<p>
+La amistad verdadera no se mide por la distancia ni por el tiempo,
+sino por los recuerdos que quedan y el cariño que siempre permanece.
+</p>
+
+<p>
+<b>Tu amigo del Pangui<br>
+"Capibara"</b>
+</p>
+
+<p><i>P.D.: Ya estás viejita 😆</i></p>
+
+</div>
+
+<!-- música las mañanitas -->
+
+<iframe id="music"
+width="0"
+height="0"
+src=""
+frameborder="0"
+allow="autoplay"
+allowfullscreen>
+</iframe>
+
+<script>
+
+/* abrir carta + música */
+
+function openLetter(){
+
+document.getElementById("envelope").style.display="none";
+document.getElementById("letter").style.display="block";
+
+document.getElementById("music").src =
+"https://www.youtube.com/embed/5C2aHYp3JzA?autoplay=1";
+
+}
+
+/* globos */
+
+for(let i=0;i<18;i++){
+
+let balloon=document.createElement("div");
+
+balloon.className="balloon";
+
+balloon.style.left=Math.random()*100+"%";
+
+balloon.style.background=`hsl(${Math.random()*360},70%,60%)`;
+
+balloon.style.animationDuration=(8+Math.random()*6)+"s";
+
+document.body.appendChild(balloon);
+
+}
+
+</script>
+
+</body>
+</html>
